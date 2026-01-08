@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     const data = await apiCall('/auth/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      data: JSON.stringify({ username, password }),
     });
     
     const { token, user } = data;
